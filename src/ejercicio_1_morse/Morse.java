@@ -1,61 +1,70 @@
 package ejercicio_1_morse;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class Morse {
-	
-	public static final char[] abecedario = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 
-            'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
 
-	public static final String[] morse = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", 
-	              ".---", "-.-", ".-..", "--", "-.", "---", ".---.", "--.-", ".-.",
-	              "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----",
-	              "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.",
-	              "-----"};
-	
 	public static void main(String args[])
-    {
-		  Scanner keyboard = new Scanner(System.in);
-		  boolean ciclo = true;
-		  
-		  do {
-			  System.out.println(" ============================================ ");
-			  System.out.println(" Selecciona una opción del menú");
-			  System.out.println(" 1) Generar codigo morse");
-			  System.out.println(" 2) Descifrar codigo morse");
-			  System.out.println(" 3) Presiona otra tecla para salir");
-			  System.out.println(" ============================================ ");
-			  
-			  int opcion = keyboard.nextInt();
-			  keyboard.nextLine();
-			  switch(opcion) {
-				  case 1:
-					  System.out.println("Favor de ingresar el texto");
-					  String userInput = keyboard.nextLine().toLowerCase();
-					  //String userInput = "HOY ES".toLowerCase();
-					  char[] chars = userInput.toCharArray();
-					  System.out.println(Generar(chars));
-					  break;
-				  case 2:
-					  break;
-				  default:
-					  
-			  }		
-		  }while(ciclo);
-    }
-	
-	public static String Generar(char[] chars) {
-		String str = "";
-		  for (int i = 0; i < chars.length; i++){
-		      for (int j = 0; j < abecedario.length; j++){
-		          if (abecedario[j] == chars[i]){
-		              str = str + morse[j] + " ";  
-		          }
-		      }
-		  }
-		  return str;
-	}
+	{
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
+		boolean ciclo = true;
+		Morse_code code = new Morse_code();
+		do {
+			String userInput="";
+			int opcion = 0;
 
+			System.out.println(" ============================================ ");
+			System.out.println(" Selecciona una opción del menú");
+			System.out.println(" 1) Generar codigo morse");
+			System.out.println(" 2) Descifrar codigo morse");
+			System.out.println(" 3) Presiona otra tecla para salir");
+			System.out.println(" ============================================ ");
+
+			// Se lee la opcion que selecciono el usuario
+			try {
+				opcion = Integer.parseInt(reader.readLine());
+			} catch (NumberFormatException e1) {
+				System.out.println("El programa termino");
+				return;
+			} catch (IOException e1) {
+				System.out.println("El programa termino");
+				return;
+			}
+
+
+			switch(opcion) {
+			case 1:
+				// Opción para generar codigo morse
+				System.out.println("Favor de ingresar el texto");
+				try {
+					userInput = reader.readLine().toLowerCase();
+				} catch (IOException e1) {
+					System.out.println("Error al leer el texto");
+				}
+				System.out.println(code.Generar(userInput.toUpperCase()));
+				break;
+			case 2:
+				// Opcion para decifrar codigo morse
+				System.out.println("Favor de ingresar el codigo morse");
+				try {
+					userInput = reader.readLine();
+				} catch (IOException e) {
+					System.out.println("Error al leer el texto");
+				}
+				System.out.println(code.Decodificar(userInput));
+				break;
+			default:
+				// Para salir del ciclo
+				ciclo=false;
+				System.out.println("El programa termino");
+				break;
+			}		
+		}while(ciclo);
+	}
 }
