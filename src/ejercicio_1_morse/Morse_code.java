@@ -86,8 +86,4 @@ public class Morse_code {
 			}
 			return ""+buff;
 		}
-
-//		private String getWordFromLibrary(String key) {
-//			return library.get(key);
-//		}
 }
