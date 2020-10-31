@@ -33,6 +33,7 @@ public class Morse {
 				System.out.println("El programa termino");
 				return;
 			} catch (IOException e1) {
+				
 				System.out.println("El programa termino");
 				return;
 			}
