@@ -8,19 +8,25 @@ import java.util.HashMap;
 public class main_romanos {
 
 	public static void main(String[] args) {
-		String userInput;
+		int userInput;
 		Romano convertir = new Romano();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
-		System.out.println(" ============================================ ");
-		System.out.println(" Numeros Romanos");
-		System.out.println(" Ingresa el numero a convertir");
-		System.out.println(" ============================================ ");
+		boolean ciclo = true;
+		while(ciclo) {
+			System.out.println(" ============================================ ");
+			System.out.println(" Numeros Romanos");
+			System.out.println(" Ingresa el numero a convertir");
+			System.out.println(" ============================================ ");
 
-		try {
-			userInput = reader.readLine().toUpperCase();
-			System.out.println(convertir.intToRoman(Integer.parseInt(userInput)));
-		} catch (IOException e) {
-			e.printStackTrace();
+			try {
+				userInput = Integer.parseInt( reader.readLine().toUpperCase() );
+				System.out.println("Resultado: "+convertir.intToRoman(userInput));
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch(NumberFormatException e) {
+				System.out.println("Favor de ingresar numeros");
+			}
 		}
+		
 	}
 }
