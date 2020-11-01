@@ -9,6 +9,7 @@ public class main_romanos {
 
 	public static void main(String[] args) {
 		String userInput;
+		Romano convertir = new Romano();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
 		System.out.println(" ============================================ ");
 		System.out.println(" Numeros Romanos");
@@ -17,63 +18,18 @@ public class main_romanos {
 
 		try {
 			userInput = reader.readLine().toUpperCase();
-			System.out.println(romanToInt(userInput));
+			System.out.println(convertir.intToRoman(Integer.parseInt(userInput)));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// Scanner sc = new Scanner(System.in);
-		// s = sc.nextLine();
-		
-//		System.out.println(romanToInt("MDCCLX"));
-		
-	}
-
-	public static int romanToInt(String s) {
-		// Create a empty hash map.
-		HashMap<Character, Integer> map = new HashMap<>();
-
-		// Putting value in hash map.
-		map.put('I', 1);
-		map.put('V', 5);
-		map.put('X', 10);
-		map.put('L', 50);
-		map.put('C', 100);
-		map.put('D', 500);
-		map.put('M', 1000);
-
-		int result = 0;
-
-//		// initialize loop to iterate in string.
-//		for (int i = 0; i < s.length(); i++) {
-//
-//			// Checking that current element
-//			// is not smaller then previous
-//			if (i > 0 && map.get(s.charAt(i)) > map.get(s.charAt(i - 1))) {
-//				result += map.get(s.charAt(i));
-//			} else {
-//				result += map.get(s.charAt(i));
-//			}
-//			System.out.println(result);
-//		}
-		for (int i = 0; i < s.length(); i++) {
-			if (i > 0 && map.get(s.charAt(i)) > map.get(s.charAt(i - 1))) {
-				System.out.println("Entro"+result);
-				result += map.get(s.charAt(i))-map.get(s.charAt(i - 1));;
-				
-			}else
-			{
-				result += map.get(s.charAt(i));
-			}
-		}
-		
-		return result;
 	}
 	
-	public static int romanToIntOld(String s) {
-		// Create a empty hash map.
+	
+
+	public static int romanToInt(String s) {
 		HashMap<Character, Integer> map = new HashMap<>();
 
-		// Putting value in hash map.
+		// Asignamos los valores
 		map.put('I', 1);
 		map.put('V', 5);
 		map.put('X', 10);
@@ -82,22 +38,21 @@ public class main_romanos {
 		map.put('D', 500);
 		map.put('M', 1000);
 
-		// Creating integer variable to store result.
 		int result = 0;
-
-		// initialize loop to iterate in string.
-		for (int i = 0; i < s.length(); i++) {
-
-			// Checking that current element
-			// is not smaller then previous
-			if (i > 0 && map.get(s.charAt(i)) > map.get(s.charAt(i - 1))) {
-				result += map.get(s.charAt(i)) - 2 * map.get(s.charAt(i - 1));
-			} else {
-				result += map.get(s.charAt(i));
-			}
-			//System.out.println(result);
-		}
-		// Returning the integer value of Roman number.
+		int prev = 0;
+		
+		// MMXVIII
+		for(int i = s.length()-1; i>=0 ; i--) {
+            int temp = map.get(s.charAt(i));
+            if(temp < prev) {
+            	result -= temp;
+            }                
+            else {
+            	result += temp;
+            }            	
+            prev = temp;
+	    }
+		
 		return result;
-	} 
+	}
 }
