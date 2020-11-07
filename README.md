@@ -1,4 +1,4 @@
-# Ejercicio_1_morse
+Ejercicios Punto Singular
 Nombre: Ivan Martinez Estrada
-Corre: ivan.mart.est@gmail.com
-Instrucciones:
+Correo: ivan.mart.est@gmail.com
+
