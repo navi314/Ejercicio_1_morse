@@ -1,7 +1,7 @@
 Instrucciones para ejercicio Números Romanos:<br>
 <ol>
   <li> Descargar el programa y abrir el proyecto en Eclipse</li>
-  <li> Ubicar el archivo Morse.java (Ejercicio_2_Morse/src/ejercicio_2_romanos/main_romanos.java) y ejecutarlo con el botón de Run</>
+  <li> Ubicar el archivo main_morse.java (Ejercicio_2_Morse/src/ejercicio_2_romanos/main_romanos.java) y ejecutarlo con el botón de Run</>
   <li> Se mostrará el siguiente mensaje en la consola:
     <ul>
       <li>Numeros Romanos<br>
