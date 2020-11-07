@@ -59,19 +59,19 @@ public class Main_objetos {
 			switch (opcion) {
 			case 1:
 				System.out.println("Resultado: " + cuadrado.calcularArea(lado));
-				menu_calculo = menuResultado();
+				menu_calculo = menuResultado(lado);
 				break;
 			case 2:
 				System.out.println("Resultado: " + cuadrado.calcularPerimetro(lado));
-				menu_calculo = menuResultado();
+				menu_calculo = menuResultado(lado);
 				break;
 			case 3:
 				System.out.println("Resultado: " + cubo.calcularVolumen(lado));
-				menu_calculo = menuResultado();
+				menu_calculo = menuResultado(lado);
 				break;
 			case 4:
 				System.out.println("Resultado: " + cubo.calcularPerimetro(lado));
-				menu_calculo = menuResultado();
+				menu_calculo = menuResultado(lado);
 				break;
 			case 5:
 				menu_calculo = false;
@@ -87,7 +87,7 @@ public class Main_objetos {
 		return true;
 	}
 
-	public static boolean menuResultado() {
+	public static boolean menuResultado(int lado) {
 		boolean menu_resultado = true;
 		boolean regreso = false;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -95,7 +95,7 @@ public class Main_objetos {
 			int opcion = 0;
 			System.out.println(" ========================================================== ");
 			System.out.println(" Menú de Resultados");
-			System.out.println(" 1) Regresar al menú de calculos");
+			System.out.println(" 1) Regresar al menú de calculos (Valor actual: "+ lado + ")");
 			System.out.println(" 2) Regresar al menú inicial (Volver a ingresar el valor del lado)");
 			System.out.println(" ========================================================== ");
 			// Se lee la opcion que selecciono el usuario

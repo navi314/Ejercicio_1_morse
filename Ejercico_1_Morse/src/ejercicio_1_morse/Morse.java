@@ -16,7 +16,7 @@ public class Morse {
 		boolean ciclo = true;
 		Morse_code code = new Morse_code();
 		do {
-			String userInput="";
+			String textoEntrada="";
 			int opcion = 0;
 
 			System.out.println(" ============================================ ");
@@ -44,21 +44,21 @@ public class Morse {
 				// Opción para generar codigo morse
 				System.out.println("Favor de ingresar el texto");
 				try {
-					userInput = reader.readLine().toLowerCase();
+					textoEntrada = reader.readLine().toLowerCase();
 				} catch (IOException e1) {
 					System.out.println("Error al leer el texto");
 				}
-				System.out.println(code.Generar(userInput.toUpperCase()));
+				System.out.println(code.Generar(textoEntrada.toUpperCase()));
 				break;
 			case 2:
 				// Opcion para decifrar codigo morse
 				System.out.println("Favor de ingresar el codigo morse");
 				try {
-					userInput = reader.readLine();
+					textoEntrada = reader.readLine();
 				} catch (IOException e) {
 					System.out.println("Error al leer el texto");
 				}
-				System.out.println(code.Decodificar(userInput));
+				System.out.println(code.Decodificar(textoEntrada));
 				break;
 			default:
 				// Para salir del ciclo
