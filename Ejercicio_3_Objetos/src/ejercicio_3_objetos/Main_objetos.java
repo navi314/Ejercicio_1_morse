@@ -32,8 +32,8 @@ public class Main_objetos {
 	}
 
 	public static boolean menuCalculo(int lado) {
-		Cubo cubo = new Cubo();
-		Cuadrado cuadrado = new Cuadrado();
+		Cubo cubo = new Cubo(lado);
+		Cuadrado cuadrado = new Cuadrado(lado);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		boolean menu_calculo = true;
 		do {
@@ -58,19 +58,22 @@ public class Main_objetos {
 			}
 			switch (opcion) {
 			case 1:
-				System.out.println("El área del cuadrado es: " + cuadrado.calcularArea(lado));
+				System.out.println("El área del cuadrado es: " + cuadrado.calcularArea());
 				menu_calculo = menuResultado(lado);
 				break;
 			case 2:
-				System.out.println("El perímetro del cuadrado es: " + cuadrado.calcularPerimetro(lado));
+				System.out.println("El perímetro del cuadrado es: " + cuadrado.calcularPerimetro());
 				menu_calculo = menuResultado(lado);
 				break;
 			case 3:
-				System.out.println("El volumen del cubo es: " + cubo.calcularVolumen(lado));
-				menu_calculo = menuResultado(lado);
+				System.out.println("El volumen del cubo es: " + cubo.calcularVolumen());
+				// Usamos la función del getter para obtener el lado del cubo
+				menu_calculo = menuResultado(cubo.getLado());
 				break;
 			case 4:
-				System.out.println("El perímetro del cubo es: " + cubo.calcularPerimetro(lado));
+				System.out.println("El perímetro del cubo es: " + cubo.calcularPerimetro());
+				// Usamos el valor del lado que se manda a la función. 
+				// Para el caso 3 y el caso 4 estamos mandando el mismo valor solo que lo obtenemos de forma diferente
 				menu_calculo = menuResultado(lado);
 				break;
 			case 5:
