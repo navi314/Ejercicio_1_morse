@@ -58,19 +58,19 @@ public class Main_objetos {
 			}
 			switch (opcion) {
 			case 1:
-				System.out.println("Resultado: " + cuadrado.calcularArea(lado));
+				System.out.println("El área del cuadrado es: " + cuadrado.calcularArea(lado));
 				menu_calculo = menuResultado(lado);
 				break;
 			case 2:
-				System.out.println("Resultado: " + cuadrado.calcularPerimetro(lado));
+				System.out.println("El perímetro del cuadrado es: " + cuadrado.calcularPerimetro(lado));
 				menu_calculo = menuResultado(lado);
 				break;
 			case 3:
-				System.out.println("Resultado: " + cubo.calcularVolumen(lado));
+				System.out.println("El volumen del cubo es: " + cubo.calcularVolumen(lado));
 				menu_calculo = menuResultado(lado);
 				break;
 			case 4:
-				System.out.println("Resultado: " + cubo.calcularPerimetro(lado));
+				System.out.println("El perímetro del cubo es: " + cubo.calcularPerimetro(lado));
 				menu_calculo = menuResultado(lado);
 				break;
 			case 5:
