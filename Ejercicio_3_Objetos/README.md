@@ -1,0 +1,41 @@
+Instrucciones para ejercicio Objetos <br>
+<ol>
+  <li> Descargar el programa y abrir el proyecto en Eclipse.</li>
+  <li> Ubicar el archivo Main_objetos.java (Ejercicio_3_Objetos/src/ejercicio_3_objetos/Main_objetos.java) y ejecutarlo con el botón de Run</>
+  <li> Se mostrará el siguiente mensaje en la consola:
+    <ul>
+      <li>Menú principal <br>
+         Introducir la longitud de uno de los lados de la figura
+      </li>
+    </ul>
+  </li>
+  <li> Ingresar el valor decimal en la consola de uno de los lados de la figura.</li>
+  <li> Se mostrará el Menú de cálculo con las siguientes opciones:
+    <ul>
+       <li> 1) Calcular el Área de un Cuadrado</li>
+       <li> 2) Calcular el Perímetro de un Cuadrado </li>
+       <li> 3) Calcular el Volumen de un Cubo </li>
+       <li> 4) Calcular el Perímetro de un Cubo </li>
+       <li> 5) Regresar al menú principal </li>
+       <li> 6) Salir del programa </li>
+    </ul>
+  </li>
+  <li> Para seleccionar una de las opciones del menú es necesario ingresar el valor que está a un lado de la opción.</li>
+  <li> En caso de ingresar un "1" en la consola se mostrará el Área del Cuadrado tomando en cuenta la longitud del lado que se ingresó al principio.</li>
+  <li> En caso de ingresar un "2" en la consola se mostrará el Perímetro del Cuadrado tomando en cuenta la longitud del lado que se ingresó al principio.</li>
+  <li> En caso de ingresar un "3" en la consola se mostrará el Volumen del Cubo tomando en cuenta la longitud del lado que se ingresó al principio.</li>
+  <li> En caso de ingresar un "4" en la consola se mostrará el Perímetro del Cubo tomando en cuenta la longitud del lado que se ingresó al principio.</li>
+  <li> En caso de ingresar un "5" el programa volverá a mostrar el menú principal en donde se le pide al usuario ingresar la longitud de un lado de la figura.</li>
+  <li> En caso de ingresar un "6" en la consola el programa terminara su ejecución.</li>
+  <li> Para las opciones del 1 al 4, junto con el resultado de la operación se va a mostrar un menú con las siguientes opciones:
+    <ul>
+      <li>
+        Menú de Resultados
+        <br> 1) Regresar al menú de cálculos (Valor actual: "Valor actual")
+        <br> 2) Regresar al menú inicial (Volver a ingresar el valor del lado)
+      </li>
+    </ul>
+  </li>
+  <li>En el Menú de Resultados se muestra la primera opción con el valor de la longitud del lado, en caso de ingresar un "1" en la consola se regresará el programa al Menú de Cálculos, donde se puede volver a ejecutar las operaciones con la longitud del lado que se ingresó al principio.</li>
+  <li> En caso de ingresar un "2" en la consola el programa se regresará al menú principal donde se puede ingresar un nuevo valor para el lado.</li>
+</ol>
